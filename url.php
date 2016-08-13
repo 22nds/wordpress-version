@@ -72,7 +72,5 @@ $domain = preg_replace('/^www\./', '', $urlParts['host']);
 		/* Get the generator node form the XML i.e. the url http://wordpress.org/?v=3.6  */
 		$generator = $xml->channel->generator;
 		// echo $generator;
-	}
-
-      
+	}  
 ?>

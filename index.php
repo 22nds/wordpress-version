@@ -6,17 +6,15 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
 <title>Search for WordPress version</title>
-<meta name="fb:admins" content="701068550"/>
-<meta name="fb:app_id" content="119469354894717"/>
 <meta property="og:type" content="website"/>
 <meta property="og:title" content="WordPress version search"/>
-<meta property="og:url" content="http://princessdesign.net/fbtab/wordpress-verzija/"/>
+<meta property="og:url" content="http://princessdesign.net/"/>
 <meta property="og:image" content="img/WP-version.png"/>
 <meta property="og:site_name" content="WordPress version search"/>
 <meta property="og:description" content="Find your WordPress version. Enter the URL and get the version of the WordPress on your web page.">
 <meta name="twitter:card" content="summary"/>
 <meta name="robots" content="index, follow, noodp">
-<meta name="author" content="Princessdesign, Ltd.">
+<meta name="author" content="Maja Kraljic">
 
 <?php include 'versions.php'; ?>
 
@@ -84,7 +82,14 @@ $wpRSSSource = array (
 	"http://" . $domain . "/" . $path ."?feed=rss2",
 	"http://www." . $domain . "/" . $path ."?feed=rss2",
 	"http://www." . $domain . "/" . $path ."index.php/feed/",
-	"http://" . $domain . "/" . $path ."index.php/feed/"
+	"http://" . $domain . "/" . $path ."index.php/feed/",
+	"https://" . $domain . "/" . $path . "feed/",
+	"https://www." . $domain . "/" . $path ."feed/",
+	"https://" . $domain . "/" . $path ."?feed=rss2",
+	"https://www." . $domain . "/" . $path ."?feed=rss2",
+	"https://www." . $domain . "/" . $path ."index.php/feed/",
+	"https://" . $domain . "/" . $path ."index.php/feed/"
+
 );
 		
 // set the counter to go through array of RSS feed locations 		
@@ -108,14 +113,15 @@ while (!$xml AND $i < count($wpRSSSource)){
 } 
 
 if ($xml) {
-			/* Get the generator node from the XML i.e. the url with the version http://wordpress.org/?v=3.6  */
+/* Get the generator node from the XML i.e. the url with the version http://wordpress.org/?v=3.6  */
 		$generator = $xml->channel->generator;
-		//  echo $generator;
-		if ($generator) {
-		/* If RSS feed was found get the version number out of the generator string  e.g. 3.7 */        
-        $version = str_replace('http://wordpress.org/?v=', '', $generator);
-        // echo $version;
-		} 
+//  echo $generator;
+	if ($generator) {
+/* If RSS feed was found get the version number out of the generator string  e.g. 3.7 */        
+/* TODO Add str replace for http */
+	$version = str_replace('https://wordpress.org/?v=', '', $generator);
+// echo $version;
+} 
 } 
 
 if (!$generator OR !$version) {
@@ -135,10 +141,10 @@ if (!$generator OR !$version) {
 		$file = curl_exec($curl);
 		curl_close($curl);
 		//$xml = @simplexml_load_string($file);
-	//echo $j;
-	//echo $wpReadme;
-	//print_r($file);
-	//print_r($xml);
+		//echo $j;
+		//echo $wpReadme;
+		//print_r($file);
+		//print_r($xml);
 	
 	$reader = new XMLReader;
 	$reader->xml($file);
@@ -186,22 +192,16 @@ $j=0;
 
    if (!$version) {
          
-		/* If RSS feed wasn't found display a message in English */
-		
-		$html .= "<div class='row collapse'><div class='small-9 large-6 small-centered columns text-center'>";
-		
-                
-                $html .= "<div class='panel'><p><strong>We are sorry, Wordpress version is not available.</strong></p><p><small>There are several reasons: web page might not be using Wordpress, maybe Wordpress is not configured properly, perhaps the URL you have entered has a typing error or the version information is well hidden.</small><p>";
-                $html .= "<p >For more information you can contact us at <strong><a href='mailto:digital@princessdesign.net'>digital@princessdesign.net</a></strong></p>";
-                
+	/* If RSS feed wasn't found display a message in English */
 
-         
-		$html .= "</div></div></div>";
+	$html .= "<div class='row collapse'><div class='small-9 large-6 small-centered columns text-center'>";
+	$html .= "<div class='panel'><p><strong>We are sorry, Wordpress version is not available.</strong></p><p><small>There are several reasons: web page might not be using Wordpress, maybe Wordpress is not configured properly, perhaps the URL you have entered has a typing error or the version information is well hidden.</small><p>";
+	$html .= "<p >For more information you can contact us at <strong><a href='mailto:digital@princessdesign.net'>digital@princessdesign.net</a></strong></p>";
+	$html .= "</div></div></div>";
          
     } else {
 
 
-   getVersionDate($version);
    
    
 
@@ -218,8 +218,7 @@ $j=0;
          }
 
 /* Start building the string for notification about the version */
-         
-		$html .= "<div class='large-12 columns text-center'>";
+	$html .= "<div class='large-12 columns text-center'>";
         $html .= "<p><strong>";
 /* domain.com */
         $html .=  $domain;
@@ -265,8 +264,7 @@ $j=0;
             <p class="text-center">Enter the URL in the search field and you will find out if you need to upgrade your website!</p> 
 			<div class="small-12 small-centered large-9 columns text-center">
 
-				<form action="https://princessdesign.net/fbtab/wordpress-verzija/" target="_self" method="get">
-				    <input type="hidden" name="lang" value="en">
+				<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" target="_self" method="get">
 					<div class="row collapse">
 						<div class="small-12 large-8 small-centered columns">
 							<div class="small-3 large-2 columns">
@@ -319,23 +317,25 @@ $j=0;
 
 <!-- TROUBLESHOOTING VARIABLS
 <?php
-    //echo "WPRSS: ";
-    //print_r($wpRSS);
-    //echo "FILE: ";
-    //print_r($file);
-    //echo "XML: ";
-    //print_r($xml);
-    //echo "GENERATOR: ";
-    //echo $generator;
-    //echo "Version: ";
-    //echo $version;
-    //echo $j;
-    //echo "WP readme: ";
-    //echo $wpReadme;
-    //print_r($file);
-    //print_r($xml);
-    //echo "READER: ";
-    //echo $reader->readString();
+/*
+    echo "WPRSS: ";
+    print_r($wpRSS);
+    echo "FILE: ";
+    print_r($file);
+    echo "XML: ";
+    print_r($xml);
+    echo "GENERATOR: ";
+    echo $generator;
+    echo "Version: ";
+    echo $version;
+    echo $j;
+    echo "WP readme: ";
+    echo $wpReadme;
+    print_r($file);
+    print_r($xml);
+    echo "READER: ";
+    echo $reader->readString();
+*/
 ?>
 -->
 

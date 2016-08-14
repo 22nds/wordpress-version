@@ -6,23 +6,20 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
 <title>Search for WordPress version</title>
-<meta property="og:type" content="website"/>
-<meta property="og:title" content="WordPress version search"/>
-<meta property="og:url" content="http://princessdesign.net/"/>
-<meta property="og:image" content="img/WP-version.png"/>
-<meta property="og:site_name" content="WordPress version search"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="WordPress version search" />
+<meta property="og:url" content="http://princessdesign.net/" />
+<meta property="og:image" content="img/WP-version.png" />
+<meta property="og:site_name" content="WordPress version search" />
 <meta property="og:description" content="Find your WordPress version. Enter the URL and get the version of the WordPress on your web page.">
-<meta name="twitter:card" content="summary"/>
 <meta name="robots" content="index, follow, noodp">
 <meta name="author" content="Maja Kraljic">
 
 <?php include 'versions.php'; ?>
 
-
-<link rel="stylesheet" type="text/css" media="all" href="style.css" />
+<link rel="stylesheet" type="text/css" media="all" href="css/style.css" />
 <?php
 // LADDA STYLES AND JS
-// <link rel="stylesheet" type="text/css" media="all" href="css/ladda-themeless.min.css" />
 ?>
 	<link rel="stylesheet" type="text/css" media="all" href="css/ladda.min.css" />
 	<?php // Typekit fonts ?>
@@ -37,7 +34,7 @@
 // set feedback message variable
 $html = "";
 
-/* WAS URL SUBMITTED? does it have url appended to the URL */
+/* WAS FORM SUBMITTED? Does it have url address appended to the URL */
 if (isset($_GET['url'])) {
     
 	// Save the url in $input
@@ -201,14 +198,10 @@ $j=0;
          
     } else {
 
-
-   
-   
-
     // Set alert string 
     $alert = "";
 
-         /* If the version of the web site is the latest display a notification in Slo and Eng */
+         /* If the version of the web site is the latest display a notification */
          if($version == $latestVersion) {
             $alert .= "<div data-alert class='alert-box success'>Update is not needed.</div>";
             
@@ -304,7 +297,7 @@ $j=0;
 					<small>
 						Powered by:
                         <strong>
-                            <a target='_blank' href='http://www.princessdesign.net/en/'>Princessdesign, digital communications, Ltd.</a>
+                            <a target='_blank' href='http://www.princessdesign.net/en/'>22dns</a>
                         </strong>
 					</small>
 				</p>
@@ -315,7 +308,7 @@ $j=0;
 <div>
 
 
-<!-- TROUBLESHOOTING VARIABLS
+<!-- TROUBLESHOOTING VARIABLES
 <?php
 /*
     echo "WPRSS: ";
@@ -341,7 +334,6 @@ $j=0;
 
 
 </div>
-
     <script src="js/ladda/spin.min.js"></script>
     <script src="js/ladda/ladda.min.js"></script>
     <script>

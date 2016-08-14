@@ -297,7 +297,7 @@ $j=0;
 					<small>
 						Powered by:
                         <strong>
-                            <a target='_blank' href='http://www.princessdesign.net/en/'>22dns</a>
+                            <a target='_blank' href='http://www.princessdesign.net/en/'>princessdesign</a>
                         </strong>
 					</small>
 				</p>

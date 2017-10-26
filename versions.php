@@ -1,14 +1,98 @@
 <?php
- 
-// UPDATE - Set the latest version         
+
+// UPDATE - Set the latest version
     $latestVersion = "4.5.3";
- 
+    $latestVersion = "4.8.2";
+
 // Set the version release dates from http://codex.wordpress.org/WordPress_Versions
 // UPDATE - add a new version when it becomes available
-    
-function getVersionDate($version) {    
-    
+
+function getVersionDate($version) {
+
     switch ($version) {
+        case "4.8.2":
+        $date = "September 19, 2017";
+        break;
+        case "4.8.1":
+        $date = "August 2, 2017 ";
+        break;
+        case "4.8":
+        $date = "June 8, 2017 ";
+        break;
+        case "4.7.6":
+        $date = "September 19, 2017 ";
+        break;
+        case "4.7.5":
+        $date = "May 16, 2017 ";
+        break;
+        case "4.7.4":
+        $date = "April 20, 2017 ";
+        break;
+        case "4.7.3":
+        $date = "March 6, 2017 ";
+        break;
+        case "4.7.2":
+        $date = "January 26, 2017";
+        break;
+        case "4.7.1":
+        $date = "January 11, 2017";
+        break;
+        case "4.7":
+            $date = "December 6, 2016 ";
+            break;
+        case "4.6.7":
+          $date = "September 19, 2017";
+          break;
+        case "4.6.6":
+            $date = "May 16, 2017";
+            break;
+        case "4.6.5":
+            $date = "April 20, 2017";
+            break;
+
+        case "4.6.4":
+            $date = "March 6, 2017";
+            break;
+
+        case "4.6.3":
+            $date = "January 26, 2017";
+            break;
+
+        case "4.6.2":
+            $date = "January 11, 2017";
+            break;
+
+        case "4.6.1":
+            $date = "September 7, 2016";
+            break;
+
+        case "4.6":
+            $date = "August 16, 2016 ";
+            break;
+
+        case "4.5.10":
+            $date = "September 19, 2017";
+            break;
+
+        case "4.5.9":
+            $date = "May 16, 2017 ";
+            break;
+
+        case "4.5.8":
+            $date = "April 20, 2017 ";
+            break;
+        case "4.5.7":
+            $date = "March 6, 2017";
+            break;
+        case "4.5.6":
+            $date = "January 26, 2017";
+            break;
+        case "4.5.5":
+            $date = "January 11, 2017";
+            break;
+        case "4.5.4":
+            $date = "September 7, 2016";
+            break;
         case "4.5.3":
           $date = "June 21, 2016";
           break;
@@ -21,6 +105,28 @@ function getVersionDate($version) {
         case "4.5":
           $date = "April 12, 2016";
           break;
+
+        case "4.4.11":
+        $date = "September 19, 2017";
+        break;
+        case "4.4.10":
+        $date = "May 16, 2017";
+        break;
+        case "4.4.9":
+        $date = "April 20, 2017";
+        break;
+        case "4.4.8":
+        $date = "March 6, 2017";
+        break;
+        case "4.4.7":
+        $date = "January 26, 2017";
+        break;
+        case "4.4.6":
+            $date = "January 11, 2017";
+            break;
+        case "4.4.5":
+            $date = "September 7, 2016";
+            break;
         case "4.4.4":
           $date = "June 21, 2016";
           break;
@@ -104,7 +210,7 @@ function getVersionDate($version) {
           break;
         case "4.1.6":
           $date = "July 23, 2015";
-          break; 
+          break;
         case "4.1.5":
           $date = "May 7, 2015";
           break;
@@ -116,11 +222,11 @@ function getVersionDate($version) {
           break;
         case "4.1.2":
           $date = "April 21, 2015";
-          break;          
+          break;
         case "4.1.1":
           $date = "February 18, 2015";
           break;
-    	case "4.1":
+        case "4.1":
           $date = "December 17, 2014";
           break;
         case "4.0.12":
@@ -158,8 +264,8 @@ function getVersionDate($version) {
           break;
         case "4.0.1":
           $date = "November 20, 2014";
-          break;    	
-    	case "4.0":
+          break;
+        case "4.0":
           $date = "September 4, 2014";
           break;
         case "3.9.13":
@@ -183,25 +289,25 @@ function getVersionDate($version) {
         case "3.9.7":
           $date = "July 23, 2015";
           break;
-	case "3.9.6":
-	  $date = "May 7, 2015";
-          break;      
-    	case "3.9.5":
-	  $date = "April 23, 2015";
-          break;      
-    	case "3.9.4":
- 	  $date = "April 21, 2015";
-          break;      
-    	case "3.9.3":
-	  $date = "November 20, 2014";
-          break;      
-    	case "3.9.2":
+    case "3.9.6":
+      $date = "May 7, 2015";
+          break;
+        case "3.9.5":
+      $date = "April 23, 2015";
+          break;
+        case "3.9.4":
+       $date = "April 21, 2015";
+          break;
+        case "3.9.3":
+      $date = "November 20, 2014";
+          break;
+        case "3.9.2":
           $date = "August 6, 2014";
           break;
-    	case "3.9.1":
+        case "3.9.1":
           $date = "May 8, 2014";
           break;
-	case "3.9":
+    case "3.9":
           $date = "April 16, 2014";
           break;
         case "3.8.15":
@@ -226,30 +332,30 @@ function getVersionDate($version) {
           $date = "July 23, 2015";
           break;
         case "3.8.8":
-		  $date = "May 7, 2015";
+          $date = "May 7, 2015";
           break;
         case "3.8.7":
-	  $date = "April 23, 2015";
+      $date = "April 23, 2015";
           break;
-	case "3.8.6":
-		  $date = "April 21, 2015";
+    case "3.8.6":
+          $date = "April 21, 2015";
           break;
         case "3.8.5":
-	  $date = "November 20, 2014";
-          break;  
- 	case "3.8.4":
+      $date = "November 20, 2014";
+          break;
+     case "3.8.4":
           $date = "August 6, 2014";
           break;
- 	case "3.8.3":
+     case "3.8.3":
           $date = "April 14, 2014";
           break;
-	case "3.8.2":
+    case "3.8.2":
           $date = "April 8, 2014";
           break;
-	case "3.8.1":
+    case "3.8.1":
           $date = "January 23, 2014";
           break;
-	case "3.8":
+    case "3.8":
           $date = "December 12, 2013";
           break;
         case "3.7.15":
@@ -274,30 +380,30 @@ function getVersionDate($version) {
           $date = "July 23, 2015";
           break;
         case "3.7.8":
-		  $date = "May 7, 2015";
+          $date = "May 7, 2015";
           break;
-		case "3.7.7":
-		  $date = "April 23, 2015";
+        case "3.7.7":
+          $date = "April 23, 2015";
           break;
         case "3.7.6":
-		  $date = "April 21, 2015";
+          $date = "April 21, 2015";
           break;
         case "3.7.5":
-		  $date = "November 20, 2014";
-          break;  
-		case "3.7.4":
+          $date = "November 20, 2014";
+          break;
+        case "3.7.4":
           $date = "August 6, 2014";
           break;
-    	case "3.7.3":
+        case "3.7.3":
           $date = "April 14, 2014";
-          break;		  
-    	case "3.7.2":
+          break;
+        case "3.7.2":
           $date = "April 8, 2014";
           break;
-    	case "3.7.1":
+        case "3.7.1":
           $date = "October 29, 2013";
           break;
-    	case "3.7":
+        case "3.7":
           $date = "October 24, 2013";
           break;
         case "3.6.1":
@@ -317,7 +423,7 @@ function getVersionDate($version) {
           break;
         case "3.4.2":
           $date = "September 6, 2012";
-          break;    
+          break;
         case "3.4.1":
           $date = "June 27, 2012";
           break;
@@ -335,10 +441,10 @@ function getVersionDate($version) {
           break;
         case "3.3":
           $date = "December 12, 2011";
-          break;    
+          break;
         case "3.2.1":
           $date = "July 12, 2011";
-          break;    
+          break;
         case "3.2":
           $date = "July 4, 2011";
           break;
@@ -356,10 +462,10 @@ function getVersionDate($version) {
           break;
         case "3.1":
           $date = "February 23, 2011";
-          break; 
+          break;
         case "3.0.6":
           $date = "April 26, 2011";
-          break;    
+          break;
         case "3.0.5":
           $date = "February 7, 2011";
           break;
@@ -377,10 +483,10 @@ function getVersionDate($version) {
           break;
         case "3.0":
           $date = "June 17, 2010";
-          break; 
+          break;
         case "2.9.2":
           $date = "February 15, 2010";
-          break;    
+          break;
         case "2.9.1":
           $date = "January 4, 2010";
           break;
@@ -398,10 +504,10 @@ function getVersionDate($version) {
           break;
         case "2.8.3":
           $date = "August 3, 2009";
-          break; 
+          break;
         case "2.8.2":
           $date = "July 20, 2009";
-          break;    
+          break;
         case "2.8.1":
           $date = "July 9, 2009";
           break;
@@ -419,7 +525,7 @@ function getVersionDate($version) {
           break;
         case "2.6.3":
           $date = "October 23, 2008";
-          break; 
+          break;
         case "2.6.2":
           $date = "September 8, 2008";
           break;
@@ -428,7 +534,7 @@ function getVersionDate($version) {
           break;
         case "2.6":
           $date = "July 15, 2008";
-          break; 
+          break;
         case "2.5.1":
           $date = "April 25, 2008";
           break;
@@ -437,7 +543,7 @@ function getVersionDate($version) {
           break;
         case "2.3.3":
           $date = "February 5, 2008";
-          break; 
+          break;
         case "2.3.2":
           $date = "December 29, 2007";
           break;
@@ -446,7 +552,7 @@ function getVersionDate($version) {
           break;
         case "2.3":
           $date = "September 24, 2007";
-          break; 
+          break;
         case "2.2.3":
           $date = "September 8, 2007";
           break;
@@ -455,7 +561,7 @@ function getVersionDate($version) {
           break;
         case "2.2.1":
           $date = "June 21, 2007";
-          break; 
+          break;
         case "2.2":
           $date = "May 16, 2007";
           break;
@@ -464,7 +570,7 @@ function getVersionDate($version) {
           break;
         case "2.1.2":
           $date = "March 2, 2007";
-          break; 
+          break;
         case "2.1.1":
           $date = "February 21, 2007";
           break;
@@ -479,7 +585,7 @@ function getVersionDate($version) {
           break;
         case "2.0.9":
           $date = "February 21, 2007";
-          break; 
+          break;
         case "2.0.8":
           $date = "February 8, 2007";
           break;
@@ -488,13 +594,13 @@ function getVersionDate($version) {
           break;
         case "2.0.6":
           $date = "January 5, 2007";
-          break; 
+          break;
         case "2.0.5":
           $date = "October 27, 2006";
           break;
         case "2.0.4":
           $date = "July 29, 2006";
-          break; 
+          break;
         case "2.0.3":
           $date = "June 1, 2006";
           break;
@@ -503,13 +609,13 @@ function getVersionDate($version) {
           break;
         case "2.0.1":
           $date = "January 31, 2006";
-          break; 
+          break;
         case "2.0":
           $date = "December 26, 2005";
           break;
         case "1.5.2":
           $date = "August 14, 2005";
-          break; 
+          break;
         case "1.5.1.3":
           $date = "June 29, 2005";
           break;
@@ -518,13 +624,13 @@ function getVersionDate($version) {
           break;
         case "1.5.1":
           $date = "May 9, 2005";
-          break; 
+          break;
         case "1.5":
           $date = "February 17, 2005";
           break;
         case "1.2.2":
           $date = "December 15, 2004";
-          break; 
+          break;
         case "1.2.1":
           $date = "October 6, 2004";
           break;
@@ -533,13 +639,13 @@ function getVersionDate($version) {
           break;
         case "1.0.2":
           $date = "March 11, 2004";
-          break; 
+          break;
         case "1.0.1":
           $date = "January 25, 2004";
           break;
         case "1.0":
           $date = "January 3, 2004";
-          break; 
+          break;
         case "0.72":
           $date = "October 11, 2003";
           break;
@@ -548,14 +654,14 @@ function getVersionDate($version) {
           break;
         case "0.71":
           $date = "June 9, 2003";
-          break; 
+          break;
         case "0.70":
           $date = "May 27, 2003";
           break;
-	default:
-	  $date = "Unknown release date";
+    default:
+      $date = "Unknown release date";
         };
-        
-	return $date;
-}      
+
+    return $date;
+}
 ?>
